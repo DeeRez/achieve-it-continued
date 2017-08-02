@@ -86,7 +86,9 @@ AchieveIt.Categories:addCategory(categoryId, L["Heroic Dungeons"], {
 	-- Heroic: Maw of Souls
 	10808,
 	-- Heroic: Neltharion's Lair
-	10796,	
+	10796,
+	-- Heroic: Seat of the Triumverate
+	12007,
 	-- Heroic: Vault of the Wardens
 	10802
 	
@@ -101,7 +103,8 @@ AchieveIt.Categories:addCategory(categoryId, L["Heroic Dungeons"], {
 		1046, -- Eye of Azshara
         1041, -- Halls Of Valor
         1042, -- Maw of Souls
-		1065, -- Neltharion's Lair
+		1065, -- Neltharion's Lair		
+		1178, -- Seat of the Triumverate
         1045  -- Vault of the Wardens
 	};
 
@@ -133,6 +136,8 @@ AchieveIt.Categories:addCategory(categoryId, L["Mythic Dungeons"], {
 	10809,
 	-- Mythic: Neltharion's Lair
 	10797,
+	-- Mythic: Seat of the Triumverate
+	12008,
 	-- Mythic: The Arcway
 	10813,
 	-- Mythic: Vault of the Wardens
@@ -153,6 +158,7 @@ AchieveIt.Categories:addCategory(categoryId, L["Mythic Dungeons"], {
         1041, -- Halls Of Valor
         1042, -- Maw of Souls
 		1065, -- Neltharion's Lair
+		1178, -- Seat of the Triumverate
 		1079, -- The Arcway
         1045 -- Vault of the Wardens
         
@@ -759,14 +765,17 @@ end;
 -----------------------------
 
 local category = AchieveIt.Categories:addCategory(categoryId, GetMapNameByID(1178), {
+	
+	-- Heroic: Seat of the Triumverate
+	12007,
 	-- Mythic: Seat of the Triumverate
-	10813,
-	-- Welcome to the Void
-	10773,
+	12008,
+	-- Welcome the Void
+	12004,
 	-- Let it All Out
-	10775,
+	12005,
 	-- Darker Side
-	10776	
+	12009	
 });
 
 -------------------------
@@ -774,8 +783,8 @@ local category = AchieveIt.Categories:addCategory(categoryId, GetMapNameByID(117
 -------------------------
 
 category:addChild(L["Zuraal the Ascended"], {
-    -- Arcanic Cling
-	10773
+	-- Welcome the Void
+	12004
 }).locate = function()
 
 	-- in dungeon
@@ -787,12 +796,12 @@ category:addChild(L["Zuraal the Ascended"], {
 end;
 
 -------------
--- Sapirsh --
+-- Saprish --
 -------------
 
-category:addChild(L["Sapirsh"], {
-    -- Arcanic Cling
-	10773
+category:addChild(L["Saprish"], {
+	-- Let it All Out
+	12005
 }).locate = function()
 
 	-- in dungeon
@@ -800,16 +809,17 @@ category:addChild(L["Sapirsh"], {
 	
 	return 1178 == GetCurrentMapAreaID() and
 			AchieveIt.difficulty.isMythicDungeon() and
-			UnitName("target") == "Sapirsh";
+			(UnitName("target") == "Saprish" or
+			UnitName("target") == "Darkfang" or
+			UnitName("target") == "Duskwing");
 end;
 
+--[[
 --------------------
 -- Viceroy Nezhar --
 --------------------
 
 category:addChild(L["Viceroy Nezhar"], {
-    -- Arcanic Cling
-	10773
 }).locate = function()
 
 	-- in dungeon
@@ -819,14 +829,15 @@ category:addChild(L["Viceroy Nezhar"], {
 			AchieveIt.difficulty.isMythicDungeon() and
 			UnitName("target") == "Viceroy Nezhar";
 end;
+]]
 
 -----------
 -- L'ura --
 -----------
 
 category:addChild(L["L'ura"], {
-    -- Arcanic Cling
-	10773
+	-- Darker Side
+	12009
 }).locate = function()
 
 	-- in dungeon

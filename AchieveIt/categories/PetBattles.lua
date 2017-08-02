@@ -16,8 +16,11 @@ local categoryId = 15119;
 
 AchieveIt.Categories:addCategory(categoryId, L["Progress"], {
 
+
 	-- An Awfully Big Adventure
 	9069,
+	-- Anomalous Animals of Argus
+	12088,
 	-- Battle on the Broken Isles
 	10876,
 	-- Big City Pet Brawler
@@ -28,7 +31,7 @@ AchieveIt.Categories:addCategory(categoryId, L["Progress"], {
 	6592,
 	-- Master of the Masters
 	8518,
-	-- 	Tiny Terrors in Tanaan
+	-- Tiny Terrors in Tanaan
 	10052
 });
 
@@ -51,11 +54,12 @@ AchieveIt.Categories:addCategory(categoryId, L["Draenor"], {
 		-- Draenic Pet Battler
 		9463
 });
-------------------------------
--- Legion Category --
-------------------------------
 
-AchieveIt.Categories:addCategory(categoryId, L["Broken Isles"], {
+---------------------------
+-- Broken Isles Category --
+---------------------------
+
+	AchieveIt.Categories:addCategory(categoryId, L["Broken Isles"], {
 	-- Aquatic Acquiescence
 	9686,
 	-- Best of the Beasts
@@ -77,6 +81,33 @@ AchieveIt.Categories:addCategory(categoryId, L["Broken Isles"], {
 	-- The Lil' Necromancer
 	9695
 });
+--------------------
+-- Argus Category --
+--------------------
+
+AchieveIt.Categories:addCategory(categoryId, L["Argus"], {
+	-- Aquatic Assault
+	12089,
+	-- Beast Blitz
+	12091,
+	-- Critical Critters
+	12092,
+	-- Draconic Destruction
+	12093,
+	-- Elemental Escalation
+	12094,
+	-- Fierce Fliers
+	12095,
+	-- Humanoid Havoc
+	12096,
+	-- Magical Mayhem
+	12097,
+	-- Mechanical Melee
+	12098,
+	-- Unstoppable Undead
+	12099
+});
+
 
 
 
