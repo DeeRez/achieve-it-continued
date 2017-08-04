@@ -35,7 +35,8 @@
 	<Script file="DungeonsRaids_LegionRaid.lua" />
 
     <Script file="Professions_Archaeology.lua" />
-
+    <Script file="Professions_Cooking.lua" />
+    <Script file="Professions_Fishing.lua" />
 	<Script file="PetBattles.lua" />
 	
 	<Script file="Scenarios.lua" />

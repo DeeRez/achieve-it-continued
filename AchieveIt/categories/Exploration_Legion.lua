@@ -144,6 +144,8 @@ AchieveIt.Categories:addCategory(categoryId, L["Argus"], {
 	12084,
 	-- Invasion Obliteration
 	12026,
+	-- Paragon of Argus
+	12083,
 	-- Shoot First, Loot Later
 	12074
 });

@@ -851,12 +851,13 @@ category:inheritAchievements();
 -- Antorus, The Burning Throne --
 ---------------------------------
 
-local category = AchieveIt.Categories:addCategory(categoryId, L["Antorus, The Burning Throne"]);
+-- local category = AchieveIt.Categories:addCategory(categoryId, L["Antorus, The Burning Throne"]);
+local category = AchieveIt.Categories:addCategory(categoryId, GetMapNameByID(1188));
 	
 category.locate = function()
 
     -- in raid
-	return 1085 == GetCurrentMapAreaID();
+	return 1188 == GetCurrentMapAreaID();
 
 end;
 
@@ -922,7 +923,7 @@ category:addChild(L["Progress"], {
 
     -- in raid
     -- not raid finder
-    return 1147 == GetCurrentMapAreaID() and
+    return 1188 == GetCurrentMapAreaID() and
             not AchieveIt.difficulty.isRaidFinder() and
 			UnitName("target") == L["Gorathi Worldbreaker"];
 
@@ -941,7 +942,7 @@ end;
 
     -- in raid
     -- not raid finder
-    return 1147 == GetCurrentMapAreaID() and
+    return 1188 == GetCurrentMapAreaID() and
             not AchieveIt.difficulty.isRaidFinder() and
 			(UnitName("target") == L["F'harg"] or
 			UnitName("target") ==L["Shatug"]);
@@ -961,7 +962,7 @@ end;
 
     -- in raid
     -- not raid finder
-    return 1147 == GetCurrentMapAreaID() and
+    return 1188 == GetCurrentMapAreaID() and
             not AchieveIt.difficulty.isRaidFinder() and
 			(UnitName("target") == L["Admiral Svirax"] or
 			UnitName("target") ==L["Chief Engineer Ishkar"] or 
@@ -982,7 +983,7 @@ end;
 
     -- in raid
     -- not raid finder
-    return 1147 == GetCurrentMapAreaID() and
+    return 1188 == GetCurrentMapAreaID() and
             not AchieveIt.difficulty.isRaidFinder() and
 			UnitName("target") == L["Portalkeeper Hasabel"];
 
@@ -1001,7 +1002,7 @@ end;
 
     -- in raid
     -- not raid finder
-    return 1147 == GetCurrentMapAreaID() and
+    return 1188 == GetCurrentMapAreaID() and
             not AchieveIt.difficulty.isRaidFinder() and
 			UnitName("target") == L["Essence of Eonar"];
 
@@ -1020,7 +1021,7 @@ end;
 
     -- in raid
     -- not raid finder
-    return 1147 == GetCurrentMapAreaID() and
+    return 1188 == GetCurrentMapAreaID() and
             not AchieveIt.difficulty.isRaidFinder() and
 			UnitName("target") == L["Imonar the Soulhunter"];
 
@@ -1039,7 +1040,7 @@ end;
 
     -- in raid
     -- not raid finder
-    return 1147 == GetCurrentMapAreaID() and
+    return 1188 == GetCurrentMapAreaID() and
             not AchieveIt.difficulty.isRaidFinder() and
 			UnitName("target") == L["Kin'garoth"];
 
@@ -1058,7 +1059,7 @@ end;
 
     -- in raid
     -- not raid finder
-    return 1147 == GetCurrentMapAreaID() and
+    return 1188 == GetCurrentMapAreaID() and
             not AchieveIt.difficulty.isRaidFinder() and
 			UnitName("target") == L["Varimathras"];
 
@@ -1077,7 +1078,7 @@ end;
 
     -- in raid
     -- not raid finder
-    return 1147 == GetCurrentMapAreaID() and
+    return 1188 == GetCurrentMapAreaID() and
             not AchieveIt.difficulty.isRaidFinder() and
 			(UnitName("target") == L["Noura, Mothe of Flames"] or 
 			UnitName("target") == L["Asara, Mother of Night"] or
@@ -1099,7 +1100,7 @@ end;
 
     -- in raid
     -- not raid finder
-    return 1147 == GetCurrentMapAreaID() and
+    return 1188 == GetCurrentMapAreaID() and
             not AchieveIt.difficulty.isRaidFinder() and
 			UnitName("target") == L["Aggramar"];
 
@@ -1116,7 +1117,7 @@ end;
 
     -- in raid
     -- not raid finder
-    return 1147 == GetCurrentMapAreaID() and
+    return 1188 == GetCurrentMapAreaID() and
             not AchieveIt.difficulty.isRaidFinder() and
 			UnitName("target") == L["Argus the Unmaker"];
 

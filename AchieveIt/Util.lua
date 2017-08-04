@@ -205,7 +205,7 @@ end
 -- rather than creating a new instance each time we want a new box
 AchieveIt.Box = AchieveItBox:new();
 
-End of deprecated code]]
+]]
 
 
 

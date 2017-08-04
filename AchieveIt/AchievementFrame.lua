@@ -1122,7 +1122,7 @@ locateButton:SetScript("OnClick", function()
 	else
 
 		-- tell user nothing was found
-		AchieveIt:Print(L["No category found"]);
+		AchieveIt:Print(L["No category found."]);
 
 	end
 

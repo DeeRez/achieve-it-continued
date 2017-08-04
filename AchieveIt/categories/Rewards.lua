@@ -114,6 +114,8 @@ local titleAchievements	= {
     9094,
     -- General
     { id = 5355, faction = AchieveIt.Factions.HORDE },
+	-- Glory of the Tomb Raider
+	11763,	
     -- Grand Marshal
     { id = 5343, faction = AchieveIt.Factions.ALLIANCE },
     -- Grunt
@@ -192,6 +194,10 @@ local titleAchievements	= {
     { id = 5333, faction = AchieveIt.Factions.ALLIANCE },
     -- Merrymaker
     1691,
+	-- Mythic: Archimonde
+	10043,
+	-- Mythic: Argus the Unmaker
+	12002,
     -- Mythic: Blackhand's Crucible
     8973,
     -- Mythic: Garrosh Hellscream
@@ -200,8 +206,6 @@ local titleAchievements	= {
 	10850,
     -- Mythic: Imperator's Fall
     8965,
-	-- Mythic: Archimonde
-	10043,
     -- Nemesis: Death Stalker
     { id = 9517, faction = AchieveIt.Factions.ALLIANCE },
     -- Nemesis: Draenei Destroyer
@@ -238,6 +242,8 @@ local titleAchievements	= {
     3036,
     -- Observed (25 player)
     3037,
+	-- Paragon of Argus
+	12083,
     -- Pilgrim
     3478,
 	-- Predator
@@ -282,6 +288,8 @@ local titleAchievements	= {
     945,
     -- The Ashen Verdict
     4598,
+	-- The Chosen
+	11387,
     -- The Conqueror
     { id = 714, faction = AchieveIt.Factions.HORDE },
     -- The Diplomat
@@ -357,7 +365,9 @@ local mountAchievements		= {
     -- For The Horde!
     { id = 619, faction = AchieveIt.Factions.HORDE },
     -- Gladiator
-    2091,
+    2091,	
+	-- Glory of the Argus Raider
+	11987,
     -- Glory of the Cataclysm Hero
     4845,
     -- Glory of the Cataclysm Raider
@@ -378,6 +388,8 @@ local mountAchievements		= {
     4602,
     -- Glory of the Icecrown Raider (25 player)
     4603,
+	-- Glory of the Legion Raider
+	11180,
     -- Glory of the Orgrimmar Raider
     8454,
     -- Glory of the Pandaria Hero
@@ -454,6 +466,10 @@ local petAchievements	= {
     8300,
     -- Draenor Safari
     9685,
+	-- Family Familiar
+	9696,
+	-- Family Fighter
+	12100,
     -- Going to Need More Leashes
     7500,
     -- Higher Learning
@@ -482,6 +498,8 @@ local petAchievements	= {
     8293,
 	-- Raiding with Leashes III: Drinkin' From the Sunwell
 	9824,
+	-- Raiding with Leashes V: Cutaclysm
+	12079,
     -- Rock Lover
     5449,
     -- Shop Smart, Shop Pet...Smart
@@ -522,14 +540,18 @@ local itemAchievements = {
 	    { id = 10256, faction = AchieveIt.Factions.ALLIANCE },
     -- Charting a Course
         { id = 10258, faction = AchieveIt.Factions.HORDE },
+	-- Commander of Argus
+	12078,
 	-- Darkmoon Racer Roadhog
 	9761,
     -- Deck Your Collection
         { id = 9176, faction = AchieveIt.Factions.ALLIANCE },
     -- Deck Your Collection
         { id = 9177, faction = AchieveIt.Factions.HORDE },
+	-- Fisherfriend of the Isles
+	11725,
     -- Going to Need More Traps
-    6556,	
+    6556,	 
 	-- Hatchling of the Talon
 	10774,
     -- Higher Learning
@@ -604,7 +626,9 @@ local questAchievements = {
 	10617,
     -- Pandaren Spirit Tamer
     7936,
-    -- Taming Cataclysm
+	-- Raiding with Leashes IV: Wrath of the Lick King
+    11320,
+	-- Taming Cataclysm
     7525,
     -- Taming Eastern Kingdoms
     { id = 6603, faction = AchieveIt.Factions.ALLIANCE },
