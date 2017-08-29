@@ -87,6 +87,8 @@ AchieveIt.Categories:addCategory(categoryId, L["Heroic Dungeons"], {
 	10808,
 	-- Heroic: Neltharion's Lair
 	10796,
+	-- Heroic: Return to Karazhan
+	11929,
 	-- Heroic: Seat of the Triumverate
 	12007,
 	-- Heroic: Vault of the Wardens
@@ -102,9 +104,10 @@ AchieveIt.Categories:addCategory(categoryId, L["Heroic Dungeons"], {
         1067, -- Darkheart Thicket		
 		1046, -- Eye of Azshara
         1041, -- Halls Of Valor
+		1115, -- Return to Karazhan
         1042, -- Maw of Souls
-		1065, -- Neltharion's Lair		
-		1178, -- Seat of the Triumverate
+		1065, -- Neltharion's Lair
+		1178, -- Seat of the Triumverate]]
         1045  -- Vault of the Wardens
 	};
 
@@ -122,10 +125,10 @@ AchieveIt.Categories:addCategory(categoryId, L["Mythic Dungeons"], {
 	10800,
 	-- Mythic: Black Rook Hold
 	10806,
-	-- Mythic: Court of Stars
-	10816,
 	-- Mythic: Cathedral of Eternal Night
 	11702,
+	-- Mythic: Court of Stars
+	10816,
 	-- Mythic: Darkheart Thicket
 	10785,
 	-- Mythic: Eye of Azshara
@@ -136,14 +139,14 @@ AchieveIt.Categories:addCategory(categoryId, L["Mythic Dungeons"], {
 	10809,
 	-- Mythic: Neltharion's Lair
 	10797,
+	-- Return to Kharazhan
+	11429,
 	-- Mythic: Seat of the Triumverate
 	12008,
 	-- Mythic: The Arcway
 	10813,
 	-- Mythic: Vault of the Wardens
-	10803,
-	-- Return to Kharazhan
-	11429
+	10803
 	
 }).locate = function()
 
@@ -156,9 +159,10 @@ AchieveIt.Categories:addCategory(categoryId, L["Mythic Dungeons"], {
         1067, -- Darkheart Thicket		
 		1046, -- Eye of Azshara
         1041, -- Halls Of Valor
+		1115, -- Return to Karazhan
         1042, -- Maw of Souls
 		1065, -- Neltharion's Lair
-		1178, -- Seat of the Triumverate
+		--[[1178, -- Seat of the Triumverate]]
 		1079, -- The Arcway
         1045 -- Vault of the Wardens
         
@@ -196,8 +200,10 @@ AchieveIt.Categories:addCategory(categoryId, L["Mythic+ Dungeons"], {
         1067, -- Darkheart Thicket		
 		1046, -- Eye of Azshara
         1041, -- Halls Of Valor
+		1115, -- Return to Karazhan
         1042, -- Maw of Souls
 		1065, -- Neltharion's Lair
+		--[[1178, -- Seat of the Triumverate]]
 		1079, -- The Arcway
         1045, -- Vault of the Wardens 
 	};
@@ -219,12 +225,9 @@ local category = AchieveIt.Categories:addCategory(categoryId, GetMapNameByID(108
 	10805,
 	-- Mythic: Black Rook Hold
 	10806,
-	-- Adds? More Like Bads
-	10711,
-	-- Black Rook Moan
-	10710,
 	-- You Used to Scrawl Me In Your Fel Tome
 	10709
+	
 });
 
 category.locate = function()
@@ -239,16 +242,18 @@ end;
 --------------------------
 
 category:addChild(L["Amalgam of Souls"], {
-    -- Black Rook Moan
+    
+	-- Black Rook Moan
 	10710
+	
 }).locate = function()
 
 	-- in dungeon
 	-- is mythic mode
 	return 1081 == GetCurrentMapAreaID() and
 			AchieveIt.difficulty.isMythicDungeon() and
-			GetCurrentMapDungeonLevel() == 1 and 
-			UnitName("target") == "Amalgam Of Souls";
+			UnitName("target") == L["Amalgam Of Souls"];
+			
 end;
 
 --------------------------
@@ -256,8 +261,10 @@ end;
 --------------------------
 
 category:addChild(L["Illysanna Ravencrest"], {
-    -- Adds? More Like Bads
+    
+	-- Adds? More Like Bads
 	10711
+	
 }).locate = function()
 
 	-- in dungeon
@@ -265,27 +272,24 @@ category:addChild(L["Illysanna Ravencrest"], {
 	
 	return 1081 == GetCurrentMapAreaID() and
 			AchieveIt.difficulty.isMythicDungeon() and
-			GetCurrentMapDungeonLevel() == 2 and
-			UnitName("target") == "Illysanna Ravencrest";
+			UnitName("target") == L["Illysanna Ravencrest"];
+			
 end;
+
+category:inheritAchievements();
 
 --------------------------------
 -- Cathedral of Eternal Night --
 --------------------------------
 
 local category = AchieveIt.Categories:addCategory(categoryId, GetMapNameByID(1146), {
+	
 	-- Cathedral of Eternal Night
 	11700,
 	-- Heroic: Cathedral of Eternal Night
 	11701,
 	-- Mythic: Cathedral of Eternal Night
-	11702,
-	-- A Steamy Romance Saga
-	11769,
-	-- Boom Bloom
-	11768,
-	-- Master of Shadows
-	11703
+	11702
 	
 });
 
@@ -300,8 +304,10 @@ end;
 -------------
 
 category:addChild(L["Agronox"], {
-    -- Boom Bloom
+    
+	-- Boom Bloom
 	11768
+	
 }).locate = function()
 
 	-- in dungeon
@@ -309,7 +315,7 @@ category:addChild(L["Agronox"], {
 	
 	return 1146 == GetCurrentMapAreaID() and
 			AchieveIt.difficulty.isMythicDungeon() and
-			GetCurrentMapDungeonLevel() == 2;
+			UnitName("target") == L["Agronox"];
 			
 
 end;
@@ -319,8 +325,10 @@ end;
 -----------------
 
 category:addChild(L["Mephistroth"], {
-    -- Master of Shadows
+    
+	-- Master of Shadows
 	11703
+	
 }).locate = function()
 
 	-- in dungeon
@@ -328,21 +336,21 @@ category:addChild(L["Mephistroth"], {
 	
 	return 1146 == GetCurrentMapAreaID() and
 			AchieveIt.difficulty.isMythicDungeon()and
-			GetCurrentMapDungeonLevel() == 5;
-			-- UnitName("target") == "Millificent Manastorm";
+			UnitName("target") == L["Mephistroth"];
+			
 end;
+
+category:inheritAchievements();
 
 -----------------------------
 -- Court of Stars Category --
 -----------------------------
 
 local category = AchieveIt.Categories:addCategory(categoryId, GetMapNameByID(1087), {
+	
 	-- Court of Stars
-	10816,
-	-- Dropping Some Eaves
-	10611,
-	-- Waiting For Gerdo
-	10610
+	10816
+	
 });
 
 category.locate = function()
@@ -359,8 +367,10 @@ end;
 --------------------------
 
 category:addChild(L["Patrol Captain Gerdo"], {
-    -- Waiting For Gerdo
+    
+	-- Waiting For Gerdo
 	10610
+	
 }).locate = function()
 
 	-- in dungeon
@@ -368,8 +378,8 @@ category:addChild(L["Patrol Captain Gerdo"], {
 	
 	return 1087 == GetCurrentMapAreaID() and
 			AchieveIt.difficulty.isMythicDungeon() and
-			GetCurrentMapDungeonLevel() == 1 and
-			UnitName("target") == "Patrol Captain Gerdo";
+			UnitName("target") == L["Patrol Captain Gerdo"];
+			
 end;
 
 -----------------------
@@ -377,8 +387,10 @@ end;
 -----------------------
 
 category:addChild(L["Advisor Melandrus"], {
-    -- Dropping Some Eaves
+    
+	-- Dropping Some Eaves
 	10611
+	
 }).locate = function()
 
 	-- in dungeon
@@ -390,23 +402,21 @@ category:addChild(L["Advisor Melandrus"], {
 
 end;
 
-
+category:inheritAchievements();
 
 --------------------------------
 -- Darkheart Thicket Category --  
 --------------------------------
 
 local category = AchieveIt.Categories:addCategory(categoryId, GetMapNameByID(1067), {
+	
 	-- Darkheart Thicket
 	10783,
 	-- Heroic: Darkheart Thicket
 	10784,
 	-- Mythic: Darkheart Thicket
-	10785,
-	-- Burning Down the House
-	10769,
-	-- Egg-cellent!
-	10766	
+	10785
+	
 });
 
 category.locate = function()
@@ -421,8 +431,10 @@ end;
 --------------
 
 category:addChild(L["Dresaron"], {
-    -- Egg-cellent!
+    
+	-- Egg-cellent!
 	10766
+	
 }).locate = function()
 
 	-- in dungeon
@@ -430,7 +442,8 @@ category:addChild(L["Dresaron"], {
 	
 	return 1067 == GetCurrentMapAreaID() and
 			AchieveIt.difficulty.isMythicDungeon() and
-			UnitName("target") == "Dresaron";
+			UnitName("target") == L["Dresaron"];
+			
 end;
 
 ---------------------
@@ -438,8 +451,10 @@ end;
 ---------------------
 
 category:addChild(L["Shade of Xavius"], {
-    -- Burning Down the House
+    
+	-- Burning Down the House
 	10769
+	
 }).locate = function()
 
 	-- in dungeon
@@ -447,26 +462,26 @@ category:addChild(L["Shade of Xavius"], {
 	
 	return 1067 == GetCurrentMapAreaID() and
 			AchieveIt.difficulty.isMythicDungeon()and
-			UnitName("target") == "Shade Of Xavius";
+			UnitName("target") == L["Shade Of Xavius"];
+			
 end;
+
+
+category:inheritAchievements();
 
 ------------------------------
 -- Eye of Azshara Category  --
 ------------------------------
 
 local category = AchieveIt.Categories:addCategory(categoryId, GetMapNameByID(1046), {
-    -- Eye of Azshara
+    
+	-- Eye of Azshara
     10780,
     -- Heroic: Eye of Azshara
     10781,
 	-- Mythic: Eye of Azshara
-	10782,
-	-- But You Say He's Just a Friend
-	10456,
-	-- Ready for Raiding V
-	10458,
-	-- Stay Salty
-	10457
+	10782
+	
 });
 
 category.locate = function()
@@ -481,8 +496,10 @@ end;
 ---------------------
 
 category:addChild(L["Warlord Parjesh"], {
-    -- But You Say He's Just a Friend
+    
+	-- But You Say He's Just a Friend
 	10456
+	
 }).locate = function()
 
 	-- in dungeon
@@ -490,7 +507,7 @@ category:addChild(L["Warlord Parjesh"], {
 	
 	return 1046 == GetCurrentMapAreaID() and
 			AchieveIt.difficulty.isMythicDungeon() and
-			UnitName("target") == "Warlord Parjesh";
+			UnitName("target") == L["Warlord Parjesh"];
 
 end;
 
@@ -499,8 +516,10 @@ end;
 -------------------
 
 category:addChild(L["Lady Hatecoil"], {
-    -- Stay Salty
+    
+	-- Stay Salty
 	10457
+	
 }).locate = function()
 
 	-- in dungeon
@@ -508,7 +527,7 @@ category:addChild(L["Lady Hatecoil"], {
 	
 	return 1046 == GetCurrentMapAreaID() and
 			AchieveIt.difficulty.isMythicDungeon() and
-			UnitName("target") == "Lady Hatecoil";
+			UnitName("target") == L["Lady Hatecoil"];
 end;
 
 ----------------------
@@ -516,8 +535,10 @@ end;
 ----------------------
 
 category:addChild(L["Wrath of Azshara"], {
-    -- Ready for Raiding V
+    
+	-- Ready for Raiding V
 	10458
+	
 }).locate = function()
 
 	-- in dungeon
@@ -525,16 +546,19 @@ category:addChild(L["Wrath of Azshara"], {
 	
 	return 1046 == GetCurrentMapAreaID() and
 			AchieveIt.difficulty.isMythicDungeon() and
-			UnitName("target") == "Wrath Of Azshara";
+			UnitName("target") == L["Wrath Of Azshara"];
 
 end;
 
+
+category:inheritAchievements();
 
 -----------------------------
 -- Halls Of Valor Category --
 -----------------------------
 
 local category = AchieveIt.Categories:addCategory(categoryId, GetMapNameByID(1041), {
+	
 	-- Halls Of Valor
 	10786,
 	-- Heroic: Halls Of Valor
@@ -544,9 +568,8 @@ local category = AchieveIt.Categories:addCategory(categoryId, GetMapNameByID(104
 	-- I Got What You Mead
 	10542,
 	-- Stag Party 
-	10544,
-	-- Surge Protectortor
-	10543
+	10544
+	
 });
 
 category.locate = function()
@@ -561,8 +584,10 @@ end;
 ----------
 
 category:addChild(L["Odyn"], {
-    -- Surge Protector
+    
+	-- Surge Protector
 	10543
+	
 }).locate = function()
 
 	-- in dungeon
@@ -570,29 +595,29 @@ category:addChild(L["Odyn"], {
 	
 	return 1041 == GetCurrentMapAreaID() and
 			AchieveIt.difficulty.isMythicDungeon() and
-			GetCurrentMapDungeonLevel() == 3 and
-			UnitName("target") == "Odyn";
+			UnitName("target") == L["Odyn"];
+			
 end; 
+
+category:inheritAchievements();
 
 -----------------------
 -- Karazhan Category --
 -----------------------
 
 local category = AchieveIt.Categories:addCategory(categoryId, GetMapNameByID(1115), {
-	-- Return to Karazhan
+	
+	-- Heroic: Return to Karazhan
+	11929,
+	-- Mythic: Return to Karazhan
 	11429,
 	-- Burn after Reading
 	11433,
-	-- Dine and Bash
-	11338,
 	-- One Night in Karazhan
 	11430,
-	-- Scared Straight
-	11432,
-	-- Season Tickets
-	11335,
 	-- The Rat Pack
 	11431
+	
 });
 
 category.locate = function()
@@ -607,8 +632,10 @@ end;
 -----------------
 
 category:addChild(L["Opera Event"], {
-    -- Season Tickets
+    
+	-- Season Tickets
 	11335
+	
 }).locate = function()
 
 	-- in dungeon
@@ -625,8 +652,10 @@ end;
 ------------
 
 category:addChild(L["Moroes"], {
-    -- Dine and Bash
+    
+	-- Dine and Bash
 	11338
+	
 }).locate = function()
 
 	-- in dungeon
@@ -634,8 +663,8 @@ category:addChild(L["Moroes"], {
 	
 	return 1115 == GetCurrentMapAreaID() and
 			AchieveIt.difficulty.isMythicDungeon() and
-			GetCurrentMapDungeonLevel() == 3 and
-			UnitName("target") == "Moroes";
+			UnitName("target") == L["Moroes"];
+			
 end; 
 
 ---------------------
@@ -643,8 +672,10 @@ end;
 ---------------------
 
 category:addChild(L["Shade of Medivh"], {
-    -- Scared Straight
+    
+	-- Scared Straight
 	11432
+	
 }).locate = function()
 
 	-- in dungeon
@@ -653,15 +684,18 @@ category:addChild(L["Shade of Medivh"], {
 	return 1115 == GetCurrentMapAreaID() and
 			AchieveIt.difficulty.isMythicDungeon() and
 			GetCurrentMapDungeonLevel() == 10 and
-			UnitName("target") == "Shade Of Medivh";
+			UnitName("target") == L["Shade Of Medivh"];
+			
 end; 
 
+category:inheritAchievements();
 
 ---------------------------
 -- Maw of Souls Category --
 ---------------------------
 
 local category = AchieveIt.Categories:addCategory(categoryId, L["Maw of Souls"], {
+	
 	-- Maw of Souls
 	10807,
 	-- Heroic: Maw of Souls
@@ -669,11 +703,8 @@ local category = AchieveIt.Categories:addCategory(categoryId, L["Maw of Souls"],
 	-- Mythic: Maw of Souls
 	10809,
 	-- Helheim Hath No Fury
-	10411,
-	-- Instant Karma
-	10413,
-	-- Poor Unfortunate Souls
-	10412
+	10411
+	
 });
 
 category.locate = function()
@@ -688,8 +719,10 @@ end;
 ------------
 
 category:addChild(L["Ymiron"], {
-    -- Instant Karma
+    
+	-- Instant Karma
 	10413
+	
 }).locate = function()
 
 	-- in dungeon
@@ -697,8 +730,8 @@ category:addChild(L["Ymiron"], {
 	
 	return 1042 == GetCurrentMapAreaID() and
 			AchieveIt.difficulty.isMythicDungeon() and
-			GetCurrentMapDungeonLevel() == 1 and
-			UnitName("target") == "Ymiron";
+			UnitName("target") == L["Ymiron"];
+			
 end;
 
 -----------
@@ -706,8 +739,10 @@ end;
 -----------
 
 category:addChild(L["Helya"], {
-    -- Poor Unfortunate Souls
+    
+	-- Poor Unfortunate Souls
 	10412
+	
 }).locate = function()
 
 	-- in dungeon
@@ -715,25 +750,27 @@ category:addChild(L["Helya"], {
 	
 	return 1042 == GetCurrentMapAreaID() and
 			AchieveIt.difficulty.isMythicDungeon() and
-			GetCurrentMapDungeonLevel() == 3 and
-			UnitName("target") == "Helya";
+			UnitName("target") == L["Helya"];
+			
 end;
+
+category:inheritAchievements();
 
 --------------------------------
 -- Neltharion's Lair Category --
 --------------------------------
 
 local category = AchieveIt.Categories:addCategory(categoryId, GetMapNameByID(1065), {
+	
 	-- Neltharion's Lair
 	10795,
 	-- Heroic: Neltharion's Lair
 	10796,
 	-- Mythic: Neltharion's Lair
 	10797,
-	-- Can't Eat Just One
-	10875,
 	-- Got to Ketchum All
 	10996
+	
 });
 
 category.locate = function()
@@ -748,8 +785,10 @@ end;
 -------------
 
 category:addChild(L["Naraxas"], {
-    -- Can't Eat Just One
+    
+	-- Can't Eat Just One
 	10875
+	
 }).locate = function()
 
 	-- in dungeon
@@ -757,8 +796,11 @@ category:addChild(L["Naraxas"], {
 	
 	return 1065 == GetCurrentMapAreaID() and
 			AchieveIt.difficulty.isMythicDungeon() and
-			UnitName("target") == "Naraxas";
+			UnitName("target") == L["Naraxas"];
+			
 end;
+
+category:inheritAchievements();
 
 -----------------------------
 -- Seat of the Triumverate --
@@ -769,13 +811,8 @@ local category = AchieveIt.Categories:addCategory(categoryId, GetMapNameByID(117
 	-- Heroic: Seat of the Triumverate
 	12007,
 	-- Mythic: Seat of the Triumverate
-	12008,
-	-- Welcome the Void
-	12004,
-	-- Let it All Out
-	12005,
-	-- Darker Side
-	12009	
+	12008
+	
 });
 
 -------------------------
@@ -793,6 +830,7 @@ category:addChild(L["Zuraal the Ascended"], {
 	return 1178 == GetCurrentMapAreaID() and
 			AchieveIt.difficulty.isMythicDungeon() and
 			UnitName("target") == "Zuraal the Ascended";
+			
 end;
 
 -------------
@@ -812,24 +850,8 @@ category:addChild(L["Saprish"], {
 			(UnitName("target") == "Saprish" or
 			UnitName("target") == "Darkfang" or
 			UnitName("target") == "Duskwing");
+			
 end;
-
---[[
---------------------
--- Viceroy Nezhar --
---------------------
-
-category:addChild(L["Viceroy Nezhar"], {
-}).locate = function()
-
-	-- in dungeon
-	-- is mythic mode
-	
-	return 1178 == GetCurrentMapAreaID() and
-			AchieveIt.difficulty.isMythicDungeon() and
-			UnitName("target") == "Viceroy Nezhar";
-end;
-]]
 
 -----------
 -- L'ura --
@@ -846,21 +868,21 @@ category:addChild(L["L'ura"], {
 	return 1178 == GetCurrentMapAreaID() and
 			AchieveIt.difficulty.isMythicDungeon() and
 			UnitName("target") == "L'ura";
+			
 end;
+
+category:inheritAchievements();
+
 
 -------------------------
 -- The Arcway Category --
 -------------------------
 
 local category = AchieveIt.Categories:addCategory(categoryId, GetMapNameByID(1079), {
+	
 	-- Mythic: The Arcway
-	10813,
-	-- Arcanic Cling
-	10773,
-	-- Clean House
-	10775,
-	-- No Time to Waste
-	10776	
+	10813
+	
 });
 
 category.locate = function()
@@ -876,8 +898,10 @@ end;
 ------------
 
 category:addChild(L["Ivanyr"], {
-    -- Arcanic Cling
+    
+	-- Arcanic Cling
 	10773
+	
 }).locate = function()
 
 	-- in dungeon
@@ -885,7 +909,8 @@ category:addChild(L["Ivanyr"], {
 	
 	return 1079 == GetCurrentMapAreaID() and
 			AchieveIt.difficulty.isMythicDungeon() and
-			UnitName("target") == "Ivanyr";
+			UnitName("target") == L["Ivanyr"];
+			
 end;
 
 ---------------
@@ -893,8 +918,10 @@ end;
 ---------------
 
 category:addChild(L["Corstilax"], {
-    -- Clean House
+    
+	-- Clean House
 	10775
+	
 }).locate = function()
 
 	-- in dungeon
@@ -902,7 +929,8 @@ category:addChild(L["Corstilax"], {
 	
 	return 1079 == GetCurrentMapAreaID() and
 			AchieveIt.difficulty.isMythicDungeon() and
-			UnitName("target") == "Corstilax";
+			UnitName("target") == L["Corstilax"];
+			
 end;
 
 ---------------------
@@ -910,8 +938,10 @@ end;
 ---------------------
 
 category:addChild(L["Advisor Vandros"], {
-    -- No Time to Waste
+    
+	-- No Time to Waste
 	10776
+	
 }).locate = function()
 
 	-- in dungeon
@@ -919,14 +949,18 @@ category:addChild(L["Advisor Vandros"], {
 	
 	return 1079 == GetCurrentMapAreaID() and
 			AchieveIt.difficulty.isMythicDungeon() and
-			UnitName("target") == "Advisor Vandros";
+			UnitName("target") == L["Advisor Vandros"];
+			
 end;
+
+category:inheritAchievements();
 
 -----------------------------------
 -- Vault of the Wardens Category --
 -----------------------------------
 
 local category = AchieveIt.Categories:addCategory(categoryId, GetMapNameByID(1045), {
+	
 	-- Vault of the Wardens
 	10801,
 	-- Heroic: Vault of the Wardens
@@ -934,11 +968,8 @@ local category = AchieveIt.Categories:addCategory(categoryId, GetMapNameByID(104
 	-- Mythic: Vault of the Wardens
 	10803,
 	-- A Specter, Illuminated
-	10707,
-	-- I Ain't Even Cold
-	10679,
-	-- Who's Afraid of the Dark?
-	10680
+	10707
+	
 });
 
 category.locate = function()
@@ -953,8 +984,10 @@ end;
 ---------------
 
 category:addChild(L["Ash'Golm"], {
-    -- I Ain't Even Cold
+    
+	-- I Ain't Even Cold
 	10679
+	
 }).locate = function()
 
 	-- in dungeon
@@ -962,8 +995,8 @@ category:addChild(L["Ash'Golm"], {
 	
 	return 1045 == GetCurrentMapAreaID() and
 			AchieveIt.difficulty.isMythicDungeon() and
-			GetCurrentMapDungeonLevel() == 2 and
-			UnitName("target") == "Ash'Golm";
+			UnitName("target") == L["Ash'Golm"];
+			
 end;
 
 ----------------------
@@ -971,8 +1004,10 @@ end;
 ----------------------
 
 category:addChild(L["Cordana Felsong"], {
-    -- Who's Afraid of the Dark?
+    
+	-- Who's Afraid of the Dark?
 	10680
+	
 }).locate = function()
 
 	-- in dungeon
@@ -980,25 +1015,25 @@ category:addChild(L["Cordana Felsong"], {
 	
 	return 1045 == GetCurrentMapAreaID() and
 			AchieveIt.difficulty.isMythicDungeon() and
-			GetCurrentMapDungeonLevel() == 3 and
-			UnitName("target") == "Cordana Felsong";
+			UnitName("target") == L["Cordana Felsong"];
+			
 end;
+
+category:inheritAchievements();
 
 -------------------------------------
 -- Assault on Violet Hold Category --
 -------------------------------------
 
 local category = AchieveIt.Categories:addCategory(categoryId, GetMapNameByID(1066), {
+	
 	-- Assault on Violet Hold
 	10798,
 	-- Heroic: Assault on Violet Hold
 	10799,
 	-- Mythic: Assault on Violet Hold
-	10800,
-	-- I Made a Food!
-	10554,
-	-- You're Just Making It WORSE!
-	10553	
+	10800
+	
 });
 
 category.locate = function()
@@ -1013,8 +1048,10 @@ end;
 ----------------
 
 category:addChild(L["Festerface"], {
-    -- I Made a Food!
+    
+	-- I Made a Food!
 	10554
+	
 }).locate = function()
 
 	-- in dungeon
@@ -1022,7 +1059,8 @@ category:addChild(L["Festerface"], {
 	
 	return 1066 == GetCurrentMapAreaID() and
 			AchieveIt.difficulty.isMythicDungeon() and
-			UnitName("target") == "Festerface";
+			UnitName("target") == L["Festerface"];
+			
 
 end;
 
@@ -1031,8 +1069,10 @@ end;
 --------------------------
 
 category:addChild(L["Millificent Manastorm"], {
-    -- You're Just Making It WORSE!
+    
+	-- You're Just Making It WORSE!
 	10553
+	
 }).locate = function()
 
 	-- in dungeon
@@ -1040,6 +1080,8 @@ category:addChild(L["Millificent Manastorm"], {
 	
 	return 1066 == GetCurrentMapAreaID() and
 			AchieveIt.difficulty.isMythicDungeon()and
-			UnitName("target") == "Millificent Manastorm";
+			UnitName("target") == L["Millificent Manastorm"];
+			
 end;
 
+category:inheritAchievements();
